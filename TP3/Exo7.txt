@@ -1,0 +1,14 @@
+Appliquez le Master Theorem aux récurrences suivantes:
+A. T(n) = 8T(n/2) + 1000n^2
+    ==> a = 8 | b = 2 | c = 2
+        Or, log_b(a)=3, sauf que 3 > 2 donc T(n) = O(n^(log_2(8)))=O(n^3)
+
+B. T(n) = 2*T(n/2) + 10n
+    ==> a = 2 | b = 2 | c = 1
+        Or, log_b(a)=log_2(2) = 1, sauf que 1 = 1 donc T(n) = O(n^1 * log(n))
+
+C. T(n) = 2T(n/2) + n^2
+    ==> a  = 2 | b = 2 | c = 2
+        Or, log_b(a) = log_2(2) = 1, sauf que 1<2 donc il faut vérifier que af(n/b) <= kf(n) (k<1 et n grand)
+        a*f(n/b) = 2*n^2/4 = n^2/2 <= 1/2 * n^2 ==> T(n) = teta(n^2)
+
