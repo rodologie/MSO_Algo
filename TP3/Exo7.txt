@@ -1,14 +1,33 @@
 Appliquez le Master Theorem aux récurrences suivantes:
-A. T(n) = 8T(n/2) + 1000n^2
-    ==> a = 8 | b = 2 | c = 2
-        Or, log_b(a)=3, sauf que 3 > 2 donc T(n) = O(n^(log_2(8)))=O(n^3)
+I-
+    A. T(n) = 8T(n/2) + 1000n^2
+        ==> a = 8 | b = 2 | c = 2
+            Or, log_b(a)=3, sauf que 3 > 2 donc T(n) = O(n^(log_2(8)))=O(n^3)
 
-B. T(n) = 2*T(n/2) + 10n
-    ==> a = 2 | b = 2 | c = 1
-        Or, log_b(a)=log_2(2) = 1, sauf que 1 = 1 donc T(n) = O(n^1 * log(n))
+    B. T(n) = 2*T(n/2) + 10n
+        ==> a = 2 | b = 2 | c = 1
+            Or, log_b(a)=log_2(2) = 1, sauf que 1 = 1 donc T(n) = O(n^1 * log(n))
 
-C. T(n) = 2T(n/2) + n^2
-    ==> a  = 2 | b = 2 | c = 2
-        Or, log_b(a) = log_2(2) = 1, sauf que 1<2 donc il faut vérifier que af(n/b) <= kf(n) (k<1 et n grand)
-        a*f(n/b) = 2*n^2/4 = n^2/2 <= 1/2 * n^2 ==> T(n) = teta(n^2)
+    C. T(n) = 2T(n/2) + n^2
+        ==> a  = 2 | b = 2 | c = 2
+            Or, log_b(a) = log_2(2) = 1, sauf que 1<2 donc il faut vérifier que af(n/b) <= kf(n) (k<1 et n grand)
+            a*f(n/b) = 2*n^2/4 = n^2/2 <= 1/2 * n^2 ==> T(n) = teta(n^2)
 
+II-
+    A. T(n) = 2^nT(n/2) + n
+        ==> a = 2^n | b = 2 | c = 1
+            Or, log_b(a) = log_2(2^n) = n, sauf que n varie entre 0 et = +∞ donc impossible de déterminer la complexité
+    
+    B. T(n) = (1/2)T(n/2) + n
+        ==> a = 1/2 | b = 2 | c = 1
+            Or, a<=1 donc impossible de déterminer la complexité. (impossible de diviser le problème en moins de problème)
+    
+    C. T(n) = 64T(n/8) - n^2log(n)
+        ==> a = 64 | b = 8 | c = 2
+            il y a une soustraction, donc on ne peut pas utiliser le master theorem.
+    
+    D. T(n) = T(n/2) + n(2 - cos(n))
+        ==> a = 1 | b = 2 | c = 1
+            Il faudrait vérifier la condition de régularité: demander correction à qqun
+        
+    Vérifier sur wikipedia 
